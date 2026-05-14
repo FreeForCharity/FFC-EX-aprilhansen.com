@@ -46,7 +46,8 @@ test.describe('aprilhansen.com — smoke', () => {
     await expect(aboutSection).toBeVisible()
 
     await expect(page.getByRole('heading', { level: 2, name: /April Hansen/i })).toBeVisible()
-    await expect(page.getByText('The Trendy Little Geek', { exact: false })).toBeVisible()
+    // Scope to #about to avoid strict-mode violation — the phrase also appears in Hero
+    await expect(aboutSection.getByText('The Trendy Little Geek', { exact: false })).toBeVisible()
   })
 
   test('about section links to freeforcharity.org', async ({ page }) => {
