@@ -1,82 +1,57 @@
 import React from 'react'
-import Image from 'next/image'
 
-const CharityHeroBackground = () => {
+/**
+ * Hero — memorial banner for aprilhansen.com.
+ *
+ * Mirrors the original WordPress page structure:
+ *   - Eyebrow:    "Explore the World of April Hansen"
+ *   - Sub-eyebrow:"Celebrating Creativity and Innovation"
+ *   - H1:         "The Life and Legacy of April Hansen"
+ *   - Lead:       Trendy Little Geek introduction
+ *
+ * Visual treatment is intentionally quiet: warm paper background with a
+ * slate-blue ink palette and a soft gold rule. No CTAs — this is a tribute
+ * page, not a transactional one.
+ */
+const Hero: React.FC = () => {
   return (
-    <div id="hero" className="relative w-full pb-[100px] overflow-hidden">
-      {/* 1. Base Blue Layer */}
-      <div className="absolute inset-0 bg-[#2E6F8E]" />
-      {/* 2. ULTRA-THIN White Diagonal Strip - HALF HEIGHT */}
-      <div
-        className="absolute inset-0 bg-white"
-        style={{
-          clipPath: 'polygon(0% 108%, 100% 32%, 100% 35%, 0% 111%)',
-        }}
-      />
+    <section
+      id="hero"
+      aria-labelledby="hero-heading"
+      className="relative w-full overflow-hidden bg-paper pt-[120px] pb-[80px] md:pt-[160px] md:pb-[120px]"
+    >
+      {/* Subtle decorative top rule */}
+      <div aria-hidden="true" className="ah-container max-w-[640px] mb-10 md:mb-14">
+        <div className="ah-rule" />
+      </div>
 
-      {/* 3. Orange Bottom-Right Section - Starts exactly where white ends */}
-      <div
-        className="absolute inset-0 bg-[#F57C20]"
-        style={{
-          clipPath: 'polygon(0% 111%, 100% 35%, 100% 100%, 0% 100%)',
-        }}
-      />
+      <div className="ah-container text-center">
+        <p className="aria-font text-[13px] md:text-[14px] tracking-[0.28em] uppercase text-[var(--ah-gold)] mb-3">
+          Explore the World of April Hansen
+        </p>
+        <p className="body-font text-[15px] md:text-[16px] italic text-[var(--ah-muted)] mb-8">
+          Celebrating Creativity and Innovation
+        </p>
 
-      <div className="hero-container flex flex-col lg:flex-row gap-[40px] lg:gap-[0px] items-center justify-between relative z-10 text-white pt-[130px] w-[90%] mx-auto max-w-[1280px] lg:px-[20px]">
-        <div className="w-full lg:w-[565px]">
-          <h1
-            className="text-[50px] lg:text-[60px] font-[500] text-[#FFFFFF] leading-[120%] mb-[20px]"
-            id="faustina-font"
-          >
-            Welcome to <br /> Free For Charity
-          </h1>
-          <p
-            className="text-[24px] font-[400] leading-[120%] text-[#FFFFFF] mb-[20px]"
-            id="lato-font"
-          >
-            Connecting Students, Professionals, & Businesses with Charities in Need
-          </p>
-          <a
-            href="#volunteer"
-            className="top-[378px] w-[300px] lg:w-[351px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] mb-[10px] whitespace-nowrap"
-            id="lato-font"
-          >
-            Volunteer
-          </a>
-          <div className="flex gap-[5px]">
-            <a
-              href="#donate"
-              className="top-[442px] w-[130px] lg:w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap"
-              id="lato-font"
-            >
-              Donate
-            </a>
-            <a
-              href="#programs"
-              className="top-[442px] w-[173px] h-[54px] opacity-100 rounded-[27px] px-[32px] py-[18px] flex items-center justify-center gap-[10px] bg-[#FFFFFF] text-[#113563] text-[20px] font-[400] leading-[100%] whitespace-nowrap"
-              id="lato-font"
-            >
-              Our Programs
-            </a>
-          </div>
-        </div>
+        <h1
+          id="hero-heading"
+          className="display-font text-[36px] sm:text-[44px] md:text-[56px] lg:text-[64px] font-[400] leading-[1.12] text-[var(--ah-primary)] mb-8 max-w-[18ch] mx-auto"
+        >
+          The Life and Legacy of April Hansen
+        </h1>
 
-        {/* Fixed right side image section */}
-        <div className="relative w-full max-w-[445px] aspect-square bg-white rounded-full p-12 flex items-center justify-center">
-          <div className="relative w-full h-full">
-            <Image
-              src="/Images/figma-hero-img.webp"
-              alt="Hero image"
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 1024px) 100vw, 445px"
-            />
-          </div>
+        <p className="body-font text-[17px] md:text-[19px] leading-[1.7] text-[var(--ah-ink)]/85 max-w-[62ch] mx-auto">
+          Explore the remarkable journey of April Hansen, affectionately known as{' '}
+          <em className="text-[var(--ah-primary)]">The Trendy Little Geek</em>, whose creativity and
+          passion left an indelible mark on the world of design and textiles.
+        </p>
+
+        <div aria-hidden="true" className="ah-container max-w-[640px] mt-12 md:mt-16">
+          <div className="ah-rule" />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
-export default CharityHeroBackground
+export default Hero
