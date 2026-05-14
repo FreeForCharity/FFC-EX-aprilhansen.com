@@ -1,39 +1,30 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import Header from './../components/header'
 import Footer from './../components/footer'
 import CookieConsent from './../components/cookie-consent'
 import GoogleTagManager, { GoogleTagManagerNoScript } from './../components/google-tag-manager'
-import {
-  openSans,
-  lato,
-  raleway,
-  faustina,
-  cantataOne,
-  faunaOne,
-  montserrat,
-  cinzel,
-} from '@/lib/fonts'
+import { openSans, lora, quattrocento } from '@/lib/fonts'
 
 // Get basePath for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ffcworkingsite1.org'),
+  metadataBase: new URL('https://aprilhansen.com'),
   title: {
-    default: 'Free For Charity | Reduce Costs, Increase Impact',
-    template: '%s | Free For Charity',
+    default: 'April Hansen | The Life and Legacy of The Trendy Little Geek',
+    template: '%s | April Hansen',
   },
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'A memorial tribute to April Hansen — known to many as The Trendy Little Geek — celebrating her creativity and passion in graphic design, art, and textiles.',
   keywords: [
-    'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
+    'April Hansen',
+    'The Trendy Little Geek',
+    'memorial',
+    'tribute',
+    'graphic designer',
+    'textile artist',
+    'creative legacy',
   ],
   robots: {
     index: true,
@@ -51,26 +42,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://ffcworkingsite1.org/',
-    siteName: 'Free For Charity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
+    url: 'https://aprilhansen.com/',
+    siteName: 'April Hansen',
+    title: 'April Hansen | The Life and Legacy of The Trendy Little Geek',
     description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
+      'A memorial tribute to April Hansen — celebrating her creativity in graphic design, art, and textiles.',
     images: [
       {
         url: '/web-app-manifest-512x512.png',
         width: 512,
         height: 512,
-        alt: 'Free For Charity',
+        alt: 'April Hansen — In Memoriam',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@freeforcharity',
-    title: 'Free For Charity | Reduce Costs, Increase Impact',
+    title: 'April Hansen | The Life and Legacy of The Trendy Little Geek',
     description:
-      'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
+      'A memorial tribute to April Hansen — celebrating her creativity in graphic design, art, and textiles.',
     images: ['/web-app-manifest-512x512.png'],
   },
   icons: {
@@ -82,6 +72,11 @@ export const metadata: Metadata = {
   },
   manifest: `${basePath}/site.webmanifest`,
 }
+
+export const viewport: Viewport = {
+  themeColor: '#22577a',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,48 +85,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preconnect to external domains for faster resource loading */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://ffcsites.org" />
-        <link rel="preconnect" href="https://www.zeffy.com" />
-        <link rel="preconnect" href="https://widgets.guidestar.org" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://ffcsites.org" />
-        <link rel="dns-prefetch" href="https://www.zeffy.com" />
-        <link rel="dns-prefetch" href="https://www.idealist.org" />
-
-        {/* Preload critical LCP image */}
-        <link
-          rel="preload"
-          as="image"
-          href={`${basePath}/Images/figma-hero-img.webp`}
-          fetchPriority="high"
-        />
-
         <GoogleTagManager />
       </head>
       <body
-        className={[
-          'antialiased',
-          openSans.variable,
-          lato.variable,
-          raleway.variable,
-          faustina.variable,
-          cantataOne.variable,
-          faunaOne.variable,
-          montserrat.variable,
-          cinzel.variable,
-        ].join(' ')}
+        className={['antialiased', openSans.variable, lora.variable, quattrocento.variable].join(
+          ' '
+        )}
         suppressHydrationWarning={true}
       >
         <GoogleTagManagerNoScript />
-        {/* <PopupProvider> */}
         <Header />
         {children}
         <Footer />
         <CookieConsent />
-        {/* <PopupsRootClient /> */}
-        {/* </PopupProvider> */}
       </body>
     </html>
   )

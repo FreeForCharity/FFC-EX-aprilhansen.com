@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Free For Charity',
-  description: 'Terms of Service for Free For Charity website',
+  title: 'Terms of Service',
+  description:
+    'Terms of Service for aprilhansen.com — a memorial site maintained by Free For Charity.',
 }
 
 export default function TermsOfService() {

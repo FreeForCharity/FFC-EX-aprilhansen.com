@@ -7,6 +7,8 @@ import {
   Fauna_One,
   Montserrat,
   Cinzel,
+  Lora,
+  Quattrocento,
 } from 'next/font/google'
 
 // Configure fonts with proper subsets and display strategy
@@ -64,4 +66,20 @@ export const cinzel = Cinzel({
   display: 'swap',
   variable: '--font-cinzel',
   weight: ['400', '500', '600', '700'],
+})
+
+// Memorial / bio site typography (matches original WordPress Divi theme on aprilhansen.com)
+export const lora = Lora({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-lora',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+})
+
+export const quattrocento = Quattrocento({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-quattrocento',
+  weight: ['400', '700'],
 })

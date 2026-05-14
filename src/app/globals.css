@@ -2,16 +2,20 @@
 @import 'tailwindcss';
 
 :root {
-  /* Brand tokens */
-  --ffc-primary: #2a6682;
-  --ffc-accent: #f58629;
-  --ffc-yellow: #f5c045;
-  --ffc-black: #000000;
-  --ffc-white: #ffffff;
+  /* Memorial / tribute palette for aprilhansen.com.
+     Slate blue is the dominant Divi accent from the original WordPress source (#22577a),
+     paired with a warm off-white paper and a muted gold rule for dignified contrast. */
+  --ah-primary: #22577a;
+  --ah-primary-soft: #3a7397;
+  --ah-paper: #faf7f2;
+  --ah-ink: #1f2a33;
+  --ah-muted: #5e6b75;
+  --ah-rule: #d9cdb6;
+  --ah-gold: #a88b5c;
 
   /* Layout */
-  --ffc-container: 1248px;
-  --ffc-radius-xl: 20px;
+  --ah-container: 1080px;
+  --ah-radius-xl: 16px;
 }
 
 html,
@@ -21,62 +25,43 @@ body {
 
 @theme inline {
   /* Tailwind design tokens mapped to brand variables */
-  --color-primary: var(--ffc-primary);
-  --color-accent: var(--ffc-accent);
-  --color-yellow: var(--ffc-yellow);
-  --color-ink: var(--ffc-black);
-  --color-paper: var(--ffc-white);
+  --color-primary: var(--ah-primary);
+  --color-primary-soft: var(--ah-primary-soft);
+  --color-paper: var(--ah-paper);
+  --color-ink: var(--ah-ink);
+  --color-muted: var(--ah-muted);
+  --color-rule: var(--ah-rule);
+  --color-gold: var(--ah-gold);
 
-  --radius-xl: var(--ffc-radius-xl);
-  --container: var(--ffc-container);
+  --radius-xl: var(--ah-radius-xl);
+  --container: var(--ah-container);
 
   /* Fonts (provided via next/font and CSS variables on <body>) */
-  --font-serif-display: var(--font-faustina);
-  --font-serif: var(--font-fauna-one);
-  --font-sans: var(--font-lato);
+  --font-serif-display: var(--font-quattrocento);
+  --font-serif: var(--font-lora);
+  --font-sans: var(--font-open-sans);
 }
 
 body {
-  font-family: var(--font-faustina), serif !important;
+  font-family: var(--font-lora), Georgia, 'Times New Roman', serif !important;
   background: var(--color-paper);
   color: var(--color-ink);
 }
 #header {
-  font-family: var(--font-open-sans), sans-serif !important;
+  font-family: var(--font-quattrocento), Georgia, serif !important;
 }
+.display-font,
+#display-font {
+  font-family: var(--font-quattrocento), Georgia, 'Times New Roman', serif !important;
+  letter-spacing: 0.01em;
+}
+.body-font,
+#body-font {
+  font-family: var(--font-lora), Georgia, 'Times New Roman', serif !important;
+}
+.aria-font,
 #aria-font {
   font-family: var(--font-open-sans), sans-serif !important;
-}
-#lato-font {
-  font-family: var(--font-lato), sans-serif !important;
-}
-#montserrat-font {
-  font-family: var(--font-montserrat), sans-serif !important;
-}
-#abeezee {
-  font-family: var(--font-open-sans), sans-serif !important;
-}
-/* Segoe UI is a system font - use native system font stack for best performance (only used 2x) */
-#segoe-font {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
-}
-#cinzel {
-  font-family: var(--font-cinzel), serif !important;
-}
-#fauna-font {
-  font-family: var(--font-fauna-one), serif !important;
-}
-#cantata-font {
-  font-family: var(--font-cantata-one), serif !important;
-}
-#raleway-font {
-  font-family: var(--font-raleway), sans-serif !important;
-}
-#courier-font {
-  font-family: ui-monospace, 'Courier New', monospace !important;
-}
-#faustina-font {
-  font-family: var(--font-faustina), serif !important;
 }
 
 /* Screen reader only utility class for accessibility */
@@ -137,19 +122,16 @@ body {
   animation: fadeRight 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
 }
 
-/* Utilities aligned to Figma */
-.ffc-container {
+/* Utilities aligned to the memorial layout */
+.ah-container {
   max-width: var(--container);
   margin-inline: auto;
-  padding-inline: 16px;
+  padding-inline: 24px;
 }
 
-.clip-diagonal {
-  clip-path: polygon(0 80%, 100% 50%, 100% 100%, 0% 100%);
-}
-
-.ffc-card {
-  @apply bg-paper border-4 rounded-xl shadow;
+.ah-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-rule), transparent);
 }
 
 /* Hide scrollbar globally */
