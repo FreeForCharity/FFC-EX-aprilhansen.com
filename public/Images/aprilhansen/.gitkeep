@@ -1,0 +1,4 @@
+# Reserved for memorial imagery (portraits, sample design work, etc.).
+# Reference via assetPath('/Images/aprilhansen/<file>.webp') from components.
+# The original WordPress source at aprilhansen.com has no content imagery,
+# so this directory ships empty pending family/stakeholder input.

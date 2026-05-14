@@ -10,19 +10,15 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'ffcworkingsite1.org',
+        hostname: 'aprilhansen.com',
       },
       {
         protocol: 'https',
-        hostname: 'staging.freeforcharity.org',
+        hostname: 'staging.aprilhansen.com',
       },
       {
         protocol: 'https',
         hostname: 'freeforcharity.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'static.vecteezy.com',
       },
     ],
   },
