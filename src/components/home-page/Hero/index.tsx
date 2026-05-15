@@ -20,6 +20,28 @@ const Hero: React.FC = () => {
       aria-labelledby="hero-heading"
       className="relative w-full overflow-hidden bg-paper pt-[120px] pb-[80px] md:pt-[160px] md:pb-[120px]"
     >
+      {/* Decorative SVG background pattern — purely visual */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.045]"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <pattern
+            id="ah-diamonds"
+            x="0"
+            y="0"
+            width="64"
+            height="64"
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M32 4 L60 32 L32 60 L4 32 Z" fill="none" stroke="#a88b5c" strokeWidth="0.75" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#ah-diamonds)" />
+      </svg>
+
       {/* Subtle decorative top rule */}
       <div aria-hidden="true" className="ah-container max-w-[640px] mb-10 md:mb-14">
         <div className="ah-rule" />
