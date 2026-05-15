@@ -49,9 +49,9 @@ export const metadata: Metadata = {
       'A memorial tribute to April Hansen — celebrating her creativity in graphic design, art, and textiles.',
     images: [
       {
-        url: '/web-app-manifest-512x512.png',
-        width: 512,
-        height: 512,
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
         alt: 'April Hansen — In Memoriam',
       },
     ],
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: 'April Hansen | The Life and Legacy of The Trendy Little Geek',
     description:
       'A memorial tribute to April Hansen — celebrating her creativity in graphic design, art, and textiles.',
-    images: ['/web-app-manifest-512x512.png'],
+    images: ['/og-image.png'],
   },
   icons: {
     icon: [
