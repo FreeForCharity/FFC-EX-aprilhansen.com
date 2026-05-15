@@ -28,8 +28,8 @@ export default function TermsOfService() {
           Purpose
         </h2>
         <p className="text-[14px] text-[#666] pb-[16px] leading-[24px] font-[500]">
-          The Site exists to celebrate April Hansen&rsquo;s life, art, and contributions. Content
-          is provided for remembrance and educational purposes only.
+          The Site exists to celebrate April Hansen&rsquo;s life, art, and contributions. Content is
+          provided for remembrance and educational purposes only.
         </p>
 
         <h2 className="text-[22px] text-[#333] pt-[12px] pb-[8px] leading-[1.2em] font-[600]">
