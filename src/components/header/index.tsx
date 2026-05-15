@@ -33,7 +33,7 @@ const Header: React.FC = () => {
         <Link
           href="/#hero"
           aria-label="April Hansen — home"
-          className="display-font text-[var(--ah-primary)] hover:text-[var(--ah-primary-soft)] transition-colors text-[18px] md:text-[20px] tracking-[0.04em]"
+          className="display-font text-[var(--ah-primary)] hover:text-[var(--ah-primary-soft)] transition-colors text-[18px] md:text-[20px] tracking-[0.04em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ah-primary)] rounded-sm"
         >
           April Hansen
         </Link>
