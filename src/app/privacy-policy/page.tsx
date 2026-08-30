@@ -345,8 +345,8 @@ export default function PrivacyPolicy() {
             from your IP address at the time of your visit; IP geolocation is approximate. In the
             EEA, the UK, and Switzerland, Google Analytics runs cookie-free until you accept.
             Everywhere else, including the United States, analytics cookies are set from your first
-            pageview. You can change your choice at any time via the Cookie Preferences link in
-            the footer of every page.
+            pageview. You can change your choice at any time via the Cookie Preferences link in the
+            footer of every page.
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
             <strong>Legal bases.</strong> We process personal data only on these bases:
