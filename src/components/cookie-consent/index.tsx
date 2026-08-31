@@ -160,7 +160,7 @@ export default function CookieConsent() {
   // Expires each NON-granted category's first-party tracking cookies —
   // the ones analytics/marketing scripts set on OUR domain (analytics:
   // GA4 + Clarity; marketing: Meta Pixel). document.cookie writes cannot
-  // expire genuinely third-party cookies (e.g. facebook.com's own copy of
+  // expire genuinely first-party tracking cookies (e.g. facebook.com's own copy of
   // `fr`); only the copies scoped to this site are cleared, which is all a
   // site can do. Called with no argument
   // (Decline All) it deletes every category. Per-category deletion matters
