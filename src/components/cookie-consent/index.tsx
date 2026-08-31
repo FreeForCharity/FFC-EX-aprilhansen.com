@@ -395,9 +395,6 @@ export default function CookieConsent() {
       console.warn('Unable to save preferences to localStorage:', e)
     }
 
-    // Expire this site's first-party tracking cookies when consent is withdrawn
-    deleteTrackingCookies()
-
     applyConsent(onlyNecessary)
     setSavedPreferencesBackup(onlyNecessary)
     setShowBanner(false)
