@@ -18,3 +18,32 @@ export const analyticsConfig = {
   // Microsoft Clarity project ID.
   clarityProjectId: 'XXXXXXXX',
 } as const
+
+// The placeholder FALLBACKS for the integrations this fork has not yet
+// configured (Meta Pixel, Microsoft Clarity) — the real GTM/GA4 IDs above
+// pass straight through isConfigured. Loaders check against this list so
+// that "leave a value as its placeholder to keep that integration
+// effectively inert" is actually honored for the unconfigured ones.
+// This fork ships an 8-X clarityProjectId placeholder, so both X-widths
+// are listed (the X{6,} fallback below would catch it regardless).
+const PLACEHOLDER_IDS: readonly string[] = [
+  'G-XXXXXXXXXX',
+  'XXXXXXXXXXXXXXX',
+  'XXXXXXXXXX',
+  'XXXXXXXX',
+]
+
+/**
+ * True when an analytics ID has been replaced with a real value. A falsy
+ * or whitespace-only value, one of the shipped placeholders, or any
+ * obviously-templated value (six or more consecutive X's) counts as NOT
+ * configured, so the integration it belongs to stays inert.
+ */
+export function isConfigured(id: string | undefined | null): boolean {
+  if (!id) return false
+  const trimmed = id.trim()
+  if (!trimmed) return false
+  if (PLACEHOLDER_IDS.includes(trimmed)) return false
+  if (/X{6,}/.test(trimmed)) return false
+  return true
+}
